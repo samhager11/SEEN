@@ -1,4 +1,55 @@
 Rails.application.routes.draw do
+#User Routes/////////////////
+
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/create'
+
+  get 'users/edit'
+
+  get 'users/update'
+
+  get 'users/destroy'
+
+  #Photo routes/////////////////
+
+  get 'photos/index'
+
+  get 'photos/show'
+
+  get 'photos/new'
+
+  get 'photos/create'
+
+  get 'photos/edit'
+
+  get 'photos/update'
+
+  get 'photos/destroy'
+
+#Forum routes////////////////////
+
+  get 'forums/index'
+
+  get 'forums/show'
+
+  get 'forums/new'
+
+  get 'forums/create'
+
+  get 'forums/edit'
+
+  get 'forums/update'
+
+  get 'forums/destroy'
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
