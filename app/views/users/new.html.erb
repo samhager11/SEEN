@@ -1,12 +1,9 @@
 
 
 
-  <form class="form-signup">
+    <%= form_for @user, html:{class:'form-signup'} do |f|%>
     <h1>Sign up. Start living.</h1>
     <h3 class="form-signup-heading">Fill out the info below to get started</h3>
-
-    <%= form_for @user do |f| %>
-
       <%= f.text_field :name, placeholder:'Name', class:'form-control' %>
       <%= f.text_field :city, placeholder:'City', class:'form-control' %>
       <%= f.text_field :country, placeholder:'Country', class:'form-control' %>
@@ -24,4 +21,3 @@
       <%= f.submit%>
 
     <% end %>
-  </form>
