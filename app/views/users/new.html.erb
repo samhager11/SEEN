@@ -3,27 +3,25 @@
 
   <form class="form-signup">
     <h1>Sign up. Start living.</h1>
-    <h3 class="form-signup-heading">Receive your very own address by filling out the information below</h3>
+    <h3 class="form-signup-heading">Fill out the info below to get started</h3>
 
-    <label for="inputName" class="sr-only">Name</label>
-    <input type="text" id="inputName" class="form-control" placeholder="Your Name" required autofocus>
+    <%= form_for @user do |f| %>
 
-    <label for="inputTel" class="sr-only">Mobile Number</label>
-    <input type="tel" id="inputName" class="form-control" placeholder="Your Mobile Number" required autofocus>
+      <%= f.text_field :name, placeholder:'Name', class:'form-control' %>
+      <%= f.text_field :city, placeholder:'City', class:'form-control' %>
+      <%= f.text_field :country, placeholder:'Country', class:'form-control' %>
+      <%= f.telephone_field :phone_number, placeholder:'Mobile Number', class:'form-control' %>
+      <%= f.number_field :latitude, placeholder:'Latitude Decimal Number', class:'form-control' %>
+      <%= f.number_field :longitude, placeholder:'Longitude Decimal Number', class:'form-control' %>
+      <%= f.password_field :password, placeholder:'Password', class:'form-control' %>
 
-    <label for="inputLat" class="sr-only">Enter Latitude</label>
-    <input type="integer" id="inputName" class="form-control" placeholder="Enter Latitude" required autofocus>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
 
-    <label for="inputLong" class="sr-only">Enter Longitude</label>
-    <input type="integer" id="inputName" class="form-control" placeholder="Enter Longitude" required autofocus>
+      <%= f.submit%>
 
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <% end %>
   </form>

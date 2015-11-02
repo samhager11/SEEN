@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @users = User.all
   end
 
   def show
@@ -10,6 +11,12 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to users_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -20,4 +27,11 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+  private
+  #only allow whitelisted fields to be populated and passed
+  def user_params
+    params.require(:user).permit(:name,:phone_number,:latitude,:longitude,:password_digest)
+  end
+
 end

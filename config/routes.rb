@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
 #User Routes/////////////////
   root 'static_pages#home'
 
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
 #User Routes/////////////////
 
-  get 'users/index'
+  get 'users' => 'users#index'
 
   get 'users/show'
 
