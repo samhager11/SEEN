@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
+  
+#User Routes/////////////////
+  root 'static_pages#home'
 
   get 'static_pages/about'
 
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
 
   get 'users/show'
 
-  get 'users/new'
+  get 'users/new' => 'users#new'
 
   get 'users/create'
 
