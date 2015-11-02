@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'static_pages/about'
+
+  get 'static_pages/how_to'
+
+  get 'static_pages/faq'
+
 #User Routes/////////////////
 
   get 'users/index'
