@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102005820) do
+ActiveRecord::Schema.define(version: 20151102015810) do
 
   create_table "forums", force: :cascade do |t|
     t.string   "post"
@@ -42,8 +42,10 @@ ActiveRecord::Schema.define(version: 20151102005820) do
     t.integer  "latitude"
     t.integer  "longitude"
     t.string   "address"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "user_name"
+    t.string   "password_digest"
   end
 
 end
