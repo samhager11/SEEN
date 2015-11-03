@@ -1,5 +1,33 @@
 Rails.application.routes.draw do
 
+  get 'address_names/index'
+
+  get 'address_names/show'
+
+  get 'address_names/new'
+
+  get 'address_names/create'
+
+  get 'address_names/edit'
+
+  get 'address_names/update'
+
+  get 'address_names/destroy'
+
+  get 'addresses/index'
+
+  get 'addresses/show'
+
+  get 'addresses/new'
+
+  get 'addresses/create'
+
+  get 'addresses/edit'
+
+  get 'addresses/update'
+
+  get 'addresses/destroy'
+
 #User Routes/////////////////
   root 'static_pages#home'
 
