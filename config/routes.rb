@@ -1,26 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'address_names/index'
 
-  get 'address_names/show'
-
-  get 'address_names/new'
-
-  get 'address_names/create'
-
-  get 'address_names/edit'
-
-  get 'address_names/update'
-
-  get 'address_names/destroy'
+#Address Routes/////////////////////
 
   get 'addresses/index'
 
   get 'addresses/show'
 
-  get 'addresses/new'
+  get 'addresses/new' => 'addresses#new'
 
-  get 'addresses/create'
+  post 'addresses/create' => 'addresses#create'
 
   get 'addresses/edit'
 
@@ -28,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'addresses/destroy'
 
-#User Routes/////////////////
+#Static_Pages Routes/////////////////
   root 'static_pages#home'
 
   get 'static_pages/about'
@@ -45,7 +34,7 @@ Rails.application.routes.draw do
 
   get 'users/new' => 'users#new'
 
-  get 'users/create'
+  post 'users/create'=> 'users#create'
 
   get 'users/edit'
 
@@ -85,6 +74,21 @@ Rails.application.routes.draw do
 
   get 'forums/destroy'
 
+  #Address_Name Routes//////////////////
+
+    get 'address_names/index'
+
+    get 'address_names/show'
+
+    get 'address_names/new'
+
+    get 'address_names/create'
+
+    get 'address_names/edit'
+
+    get 'address_names/update'
+
+    get 'address_names/destroy'
 
 
 

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_path
+      redirect_to addresses_new_path
     else
       render :new
     end
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   private
   #only allow whitelisted fields to be populated and passed
   def user_params
-    params.require(:user).permit(:name,:phone_number,:latitude,:longitude,:password_digest)
+    params.require(:user).permit(:name,:phone_number,:password_digest)
   end
 
 end
