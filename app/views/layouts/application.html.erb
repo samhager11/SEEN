@@ -9,7 +9,26 @@
 </head>
 <body>
   <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="...">
+          </a>
+          <% if current_user %>
+          Signed in as <%= current_user.name %> | <%= link_to "Logout", 'sessions/new' %>
+          <% else %>
+          <%= link_to 'Login', 'sessions/new' %> | <%= link_to 'Signup', 'users/new' %>
+          <% end %>
+        </div>
+      </div>
+    </nav>
 
+    <% flash.each do |name, message| %>
+      <div class="flash-message flash-message-<%= name %>">
+        <%= message %>
+      </div>
+    <% end %>
 
 <%= yield %>
 

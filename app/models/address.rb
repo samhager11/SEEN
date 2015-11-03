@@ -28,7 +28,7 @@ class Address < ActiveRecord::Base
      puts deg + (min+(sec/60))/60
   end
 
-  getLatCor(@lat_deg,@lat_min,@lat_sec)
+  # getLatCor(@lat_deg,@lat_min,@lat_sec)
 
   # Remember to do Integer((@lat_sec).round(1)*10)) for address conversion
   # if @lat_deg < 0, @lat_deg*-1+90 to get name and reverse on conversion out

@@ -1,23 +1,14 @@
 Rails.application.routes.draw do
 
+resources :sessions
 
 #Address Routes/////////////////////
 
-  get 'addresses/index'
+resources :addresses
 
-  get 'addresses/show'
-
-  get 'addresses/new' => 'addresses#new'
-
-  post 'addresses' => 'addresses#create'
-
-  get 'addresses/edit'
-
-  get 'addresses/update'
-
-  get 'addresses/destroy'
 
 #Static_Pages Routes/////////////////
+
   root 'static_pages#home'
 
   get 'static_pages/about'
@@ -28,67 +19,21 @@ Rails.application.routes.draw do
 
 #User Routes/////////////////
 
-  get 'users' => 'users#index'
+resources :users
 
-  get 'users/show'
-
-  get 'users/new' => 'users#new'
-
-  post 'users' => 'users#create'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/destroy'
 
   #Photo routes/////////////////
 
-  get 'photos/index'
+resources :photos
 
-  get 'photos/show'
-
-  get 'photos/new'
-
-  get 'photos/create'
-
-  get 'photos/edit'
-
-  get 'photos/update'
-
-  get 'photos/destroy'
 
 #Forum routes////////////////////
 
-  get 'forums/index'
+resources :forums
 
-  get 'forums/show'
+#Address_Name Routes//////////////////
 
-  get 'forums/new'
-
-  get 'forums/create'
-
-  get 'forums/edit'
-
-  get 'forums/update'
-
-  get 'forums/destroy'
-
-  #Address_Name Routes//////////////////
-
-    get 'address_names/index'
-
-    get 'address_names/show'
-
-    get 'address_names/new'
-
-    get 'address_names/create'
-
-    get 'address_names/edit'
-
-    get 'address_names/update'
-
-    get 'address_names/destroy'
+resources :address_names
 
 
 

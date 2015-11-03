@@ -16,6 +16,7 @@ class PhotosController < ApplicationController
       redirect_to '/'
     else
       render 'new'
+    end
   end
 
   def edit
@@ -30,4 +31,5 @@ class PhotosController < ApplicationController
   private
   def post_params
     params.require(:photo).permit(:url,:description,:user,:address)
+  end
 end
