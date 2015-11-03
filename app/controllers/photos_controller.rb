@@ -3,12 +3,19 @@ class PhotosController < ApplicationController
   end
 
   def show
+    @photo = Photo.find(params[:id])
   end
 
   def new
+    @photo = Photo.new
   end
 
   def create
+    @photo = Photo.new(post_params)
+    if @photo.save
+      redirect_to '/'
+    else
+      render 'new'
   end
 
   def edit
@@ -19,4 +26,8 @@ class PhotosController < ApplicationController
 
   def destroy
   end
+
+  private
+  def post_params
+    params.require(:photo).permit(:url,:description,:user,:address)
 end
