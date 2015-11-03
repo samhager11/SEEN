@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'addresses/new' => 'addresses#new'
 
-  post 'addresses/create' => 'addresses#create'
+  post 'addresses' => 'addresses#create'
 
   get 'addresses/edit'
 
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   get 'users/new' => 'users#new'
 
-  post 'users/create'=> 'users#create'
+  post 'users' => 'users#create'
 
   get 'users/edit'
 

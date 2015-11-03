@@ -11,9 +11,10 @@ class AddressesController < ApplicationController
   end
 
   def create
+    @current_user = current_user
     @address = Address.new(address_params)
-    if @address.save
-      redirect_to users_path
+    if @address.save && @current_user.update({address_id:@address.id})
+        redirect_to users_path
     else
       render :new
     end
