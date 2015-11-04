@@ -9,54 +9,54 @@ class Address < ActiveRecord::Base
   accepts_nested_attributes_for :forums
   before_save :addressName
 
-  @lat_deg
-  @lat_min
-  @lat_sec
-
-  def setLatVar(coordinate)
-      @lat_deg = Integer(coordinate)
-      @lat_min = Integer((coordinate-@lat_deg)*60)
-      @lat_sec = ((coordinate-@lat_deg-(@lat_min.to_f/60))*3600)
-      puts @lat_deg
-      puts @lat_min
-      puts @lat_sec
-  end
-
-  # setLatVar(36.794652)
+  validates :city, presence:true
+  validates :country, presence:true
+  validates :latitude, presence:true
+  validates :longitude, presence:true
 
 
   def getLatCor(deg,min,sec)
      puts deg + (min+(sec/60))/60
   end
 
-  @lat_deg
-  @lat_min
-  @lat_sec
-  @long_deg
-  @long_min
-  @long_sec
-
 
   def addressName
+    @adj_lat
+    if self.latitude<0
+      @adj_lat = Integer(self.latitude*-1+90)
+    else
+      @adj_lat = Integer(self.latitude)
+    end
     self.latitude_deg = Integer(self.latitude)
-    self.latitude_min = Integer((self.latitude-self.latitude_deg)*60)
-    self.latitude_sec = ((self.latitude-self.latitude_deg-(self.latitude_min.to_f/60))*3600)
+    self.latitude_min = Integer((self.latitude-self.latitude_deg).abs*60)
+    self.latitude_sec = (((self.latitude-self.latitude_deg).abs-(self.latitude_min.to_f/60))*3600)
+    @lat_sec_name
     if self.latitude_sec%1 != 0
-      self.latitude_sec = Integer((self.latitude_sec*10).round(0))
+      @lat_sec_name = Integer((self.latitude_sec*10).round(0))
     end
-    self.latitude_name_part = AddressName.where(:degree => self.latitude_deg).first.name_part + AddressName.where(:minute => self.latitude_min).first.name_part
+    self.latitude_name_part = AddressName.where(:degree => @adj_lat).first.name_part + AddressName.where(:minute => self.latitude_min).first.name_part
+
     #set if for negative number
-
-    self.longitude_deg = Integer(self.longitude)
-    self.longitude_min = Integer((self.longitude-self.longitude_deg)*60)
-    self.longitude_sec = ((self.longitude-self.longitude_deg-(self.longitude_min.to_f/60))*3600)
-    if self.longitude_sec%1 != 0
-      self.longitude_sec = Integer((self.longitude_sec*10).round(0))
+    @adj_long
+    if self.longitude<0
+      @adj_long = Integer(self.longitude*-1+180)
+    else
+      @adj_long = Integer(self.longitude)
     end
-    self.longitude_name_part = AddressName.where(:degree => self.longitude_deg).first.name_part + AddressName.where(:minute => self.longitude_min).first.name_part
+    self.longitude_deg = Integer(self.longitude)
+    self.longitude_min = Integer((self.longitude-self.longitude_deg).abs*60)
+    self.longitude_sec = (((self.longitude-self.longitude_deg).abs-(self.longitude_min.to_f/60))*3600)
+    @long_sec_name
+    if self.longitude_sec%1 != 0
+      @long_sec_name = Integer((self.longitude_sec*10).round(0))
+    end
 
+    self.longitude_name_part = AddressName.where(:degree => @adj_long).first.name_part + AddressName.where(:minute => self.longitude_min).first.name_part
 
-    self.address = self.latitude_name_part + ' ' + self.longitude_name_part + ' '+self.latitude_sec.to_s + self.longitude_sec.to_s
+    puts @adj_lat
+    puts @adj_long
+
+    self.address = (self.latitude_name_part + ' ' + self.longitude_name_part + ' '+@lat_sec_name.to_i.to_s + @long_sec_name.to_i.to_s)
   end
 
   # getLatCor(@lat_deg,@lat_min,@lat_sec)
