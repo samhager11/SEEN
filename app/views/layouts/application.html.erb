@@ -16,9 +16,10 @@
             <img alt="Brand" src="...">
           </a>
           <% if current_user %>
-          Signed in as <%= current_user.name %> | <%= link_to "Logout", 'sessions/new' %>
-          <% else %>
-          <%= link_to 'Login', 'sessions/new' %> | <%= link_to 'Signup', 'users/new' %>
+              Signed in as <%= current_user.name %>
+              <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+            <% else %>
+              <%= link_to 'Please login', login_path %> <%= link_to 'Sign Up', new_user_path %>
           <% end %>
         </div>
       </div>

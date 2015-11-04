@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103192959) do
+ActiveRecord::Schema.define(version: 20151104011638) do
 
   create_table "address_names", force: :cascade do |t|
     t.integer  "degree"
@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20151103192959) do
     t.decimal  "latitude"
     t.integer  "latitude_deg"
     t.integer  "latitude_min"
-    t.integer  "latitude_sec"
+    t.decimal  "latitude_sec"
     t.string   "latitude_name_part"
     t.decimal  "longitude"
     t.integer  "longitude_deg"
     t.integer  "longitude_min"
-    t.integer  "longitude_sec"
+    t.decimal  "longitude_sec"
     t.string   "longitude_name_part"
     t.string   "address"
     t.datetime "created_at",          null: false
@@ -65,9 +65,9 @@ ActiveRecord::Schema.define(version: 20151103192959) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "phone_number"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "phone_number",    limit: 10
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "user_name"
     t.string   "password_digest"
     t.integer  "address_id"

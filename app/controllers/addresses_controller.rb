@@ -12,7 +12,10 @@ class AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
-    if @address.save 
+
+    # @address = process_address(@address)
+        @address.user = current_user
+    if @address.save
         redirect_to users_path
     else
       render :new
@@ -31,6 +34,6 @@ class AddressesController < ApplicationController
   private
   #only allow whitelisted fields to be populated and passed
   def address_params
-    params.require(:address).permit(:city,:country,:latitude,:longitude)
+    params.require(:address).permit(:city,:country,:latitude,:longitude,:user)
   end
 end
