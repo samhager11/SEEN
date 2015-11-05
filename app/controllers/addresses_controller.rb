@@ -16,7 +16,7 @@ class AddressesController < ApplicationController
     # @address = process_address(@address)
     @address.user = current_user
     if @address.save
-        redirect_to users_path
+        redirect_to user_path(current_user)
     else
       render :new
     end

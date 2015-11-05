@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'carrierwave'
 gem 'jquery-ui-rails'
+gem 'leaflet-rails', '~> 0.7.4'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
