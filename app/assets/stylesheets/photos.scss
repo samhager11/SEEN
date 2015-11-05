@@ -1,3 +1,88 @@
 // Place all the styles related to the photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container{
+  margin: 0 auto;
+}
+
+.modal-dialog{
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 40%;
+  height: 50%;
+
+}
+
+.modal .in .modal-dialog{
+   transform: translate(-50%,-50%);
+}
+
+ul {
+  padding:0 0 0 0;
+  margin:0 0 0 0;
+}
+ul li {
+  list-style:none;
+  margin: 22px;
+}
+
+ul li img {
+  cursor: pointer;
+  height: 160px;
+  width: 200px;
+  border-radius: 10px;
+  border: 2px outset black;
+}
+
+.field{
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 7px;
+  font-size: 20px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.buttons{
+  display: inline;
+}
+
+.submit-buttons{
+  float: middle;
+}
+
+
+.form-body {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-body .form-body-heading,
+.form-body .checkbox {
+  margin-bottom: 10px;
+}
+.form-body .checkbox {
+  font-weight: normal;
+}
+.form-body .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.form-body .form-control:focus {
+  z-index: 2;
+}

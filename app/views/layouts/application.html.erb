@@ -13,16 +13,20 @@
   <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/js/lightbox.js' type="text/javascript">
   <link href='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/css/lightbox.css'>  -->
 
-  </script>
+  <!-- </script> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <div class="jumbotron">
+
   <div class="container">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-            <span>SEEN</span>
+          <div class="nav_logo">
+            <a class="navbar-brand">
+            <span id="seen">SEEN</span>
+          </div>
           </a>
           <div class='navLogin'>
           <ul class="nav nav-pills nav-justified">
@@ -44,22 +48,39 @@
                <%= link_to 'My Photos', '/' %>
                <%end%>
             </li>
-            <li role="presentation" ><%= link_to 'Community Photos', photos_path %></li>
+            <li role="presentation" >
+              <% if current_user %>
+              <%= link_to 'Community Photos', photos_path %>
+              <% else %>
+              <%= link_to 'Community Photos', '/' %>
+              <%end%>
+            </li>
           </ul>
           </div>
         </div>
       </div>
     </nav>
-
-    <% flash.each do |name, message| %>
+    <div class="jumbo-text"
+        <% if current_user%>
+        <h2>You are known, welcome <%= User.find(current_user).name %></h2><br>
+        <% else %>
+        <h2> Welcome - Sign up or Log in to be SEEN </h2><br>
+        <% end %>
+        <% flash.each do |name, message| %>
       <div class="flash-message flash-message-<%= name %>">
         <%= message %>
       </div>
-    <% end %>
-
-<%= yield %>
-
+      <% end %>
   </div>
+  </div>
+</div>
+
+
+    <div class='container'>
+
+    <%= yield %>
+
+    </div
 
 </body>
 

@@ -1,5 +1,5 @@
 <div class='form-login'>
-<h1>Login</h1>
+<h3>Log in here or click above to sign up</h3>
 <%= form_tag login_path do %>
   <div class="field">
     <%= text_field_tag :phone_number,nil, placeholder:'Mobile Number', class:'form-control' %>
@@ -7,6 +7,6 @@
   <div class="field">
     <%= password_field_tag :password,nil,placeholder:'Password', class:'form-control' %>
   </div>
-  <div class="actions"><%= submit_tag "Log in" %></div>
+  <div class="actions"><%= submit_tag "Log in", :class => 'submit-buttons' %></div>
 <% end %>
 </div>

@@ -1,14 +1,46 @@
 
 
-<h1>Photos#index</h1>
-<p>Find me in app/views/photos/index.html.erb</p>
-<% @photos.each do |p| %>
-<div class="row">
-  <div class="col-xs-6 col-md-3">
-      <%=image_tag(p.image, size: "220x180", alt: p.description)%>
-      <div class="caption">
-        <h5><%=p.description %></h5><h7>Added By:<%=p.user.name %></h7>
-      </div>
-  <% end %>
-  </div>
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+<div class='container'>
+      <ul class="row">
+        <% @photos.each do |p| %>
+
+      <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+        <img src='<%=p.image%>'>
+        <div class="caption">
+          <h6><%=p.description %></h6><h7>Added By: <%=p.user.name %></h7>
+        </div>
+      </li>
+
+    <% end %>
+    </ul>
 </div>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+     $('li img').on('click',function(){
+          var src = $(this).attr('src');
+          var img = '<img src="' + src + '" class="img-responsive"/>';
+          $('#myModal').modal();
+          $('#myModal').on('shown.bs.modal', function(){
+              $('#myModal .modal-body').html(img);
+          });
+          $('#myModal').on('hidden.bs.modal', function(){
+              $('#myModal .modal-body').html('');
+          });
+     });
+  })
+
+</script>

@@ -1,5 +1,5 @@
 
-<div class='formBody'>
+<div class='form-body'>
 <%= form_for @photo, :html => {:multipart => true} do |f| %>
   <% if @photo.errors.any? %>
   <div class="error_messages">
@@ -28,7 +28,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Submit" %>
+    <%= f.submit "Submit", :class => 'submit-buttons' %>
   </div>
 
 <% end %>
