@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104011638) do
+ActiveRecord::Schema.define(version: 20151104213112) do
 
   create_table "address_names", force: :cascade do |t|
     t.integer  "degree"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 20151104011638) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.integer  "address_id"
+    t.string   "image"
+    t.string   "city"
   end
 
   add_index "photos", ["address_id"], name: "index_photos_on_address_id"

@@ -2,9 +2,18 @@
 <html>
 <head>
   <title>Project2</title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
+
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/js/lightbox.js' type="text/javascript">
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/css/lightbox.css'>  -->
+
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -13,14 +22,31 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
-            <img alt="Brand" src="...">
+            <span>SEEN</span>
           </a>
-          <% if current_user %>
-              Signed in as <%= current_user.name %>
-              <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+          <div class='navLogin'>
+          <ul class="nav nav-pills nav-justified">
+            <% if current_user %>
+            <li role="presentation"><%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure?'} %></li>
             <% else %>
-              <%= link_to 'Please login', login_path %> <%= link_to 'Sign Up', new_user_path %>
-          <% end %>
+            <li role="presentation"><%= link_to 'Login', login_path %></li>
+            <li role="presentation"><%= link_to 'Sign Up', new_user_path %></li>
+            <%end%>
+            <% if current_user %>
+            <li role="presentation"><%= link_to 'Home', users_path %></li>
+            <%else%>
+            <li role="presentation"><%= link_to 'Home', '/' %></li>
+            <% end %>
+            <li role="presentation" >
+              <% if current_user %>
+               <%= link_to 'My Photos', photo_path(current_user) %>
+               <% else %>
+               <%= link_to 'My Photos', '/' %>
+               <%end%>
+            </li>
+            <li role="presentation" ><%= link_to 'Community Photos', photos_path %></li>
+          </ul>
+          </div>
         </div>
       </div>
     </nav>
@@ -36,4 +62,5 @@
   </div>
 
 </body>
+
 </html>

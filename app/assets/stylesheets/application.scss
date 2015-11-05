@@ -1,4 +1,12 @@
+.nav li{
+  background-color: rgba(52,194,196,.5);
+  border: 2px solid white;
+  border-radius: 7px;
+  padding: 0px;
+  text-align: center;
+  color: black;
 
+}
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -8,3 +16,10 @@
 @import "addresses";
 @import "address_names";
 @import "sessions";
+@import "static_pages"
+
+
+
+/*
+ *= require jquery-ui
+ */

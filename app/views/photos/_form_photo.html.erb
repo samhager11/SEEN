@@ -1,5 +1,6 @@
-<h1>Sign Up</h1>
-<%= form_for @photo do |f| %>
+
+<div class='formBody'>
+<%= form_for @photo, :html => {:multipart => true} do |f| %>
   <% if @photo.errors.any? %>
   <div class="error_messages">
     <h2>Form is invalid</h2>
@@ -12,19 +13,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
     <%= f.label :description %>
-    <%= f.password_field :description %>
+    <%= f.text_field :description %>
   </div>
+
   <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit" %>
   </div>
+
 <% end %>
+
+</div>

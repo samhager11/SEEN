@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
    def create
     user = User.find_by_phone_number(params[:phone_number])
     if user && user.authenticate(params[:password])
-      redirect_to root_path, notice: "logged in!"
+      redirect_to users_path, notice: "You are seen - Welcome Home"
       session[:user_id]=user.id
     else
      flash.now.alert = "Incorrect login - Try Again!"

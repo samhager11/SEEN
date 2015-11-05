@@ -1,7 +1,24 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="jumbotron">
+  <h1>Hello, <%=@user.name %></h1>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
 
-<% @users.each do |n| %>
-<%= n.name %>
-<%= n.phone_number %>
-<% end  %>
+<h2>Get to know your neighbors</h2>
+  <table>
+    <tbody id="sortable">
+      <% @users.each do |u| %>
+      <tr class="ui-state-default">
+        <td><%=u.name%></td>
+        <td><%=u.phone_number%></td>
+        <td><%=u.address.address%></td>
+      </tr>
+      <% end %>
+    </tbody>
+</table>
+
+  <script type="text/javascript">
+  $(function() {
+     $( "#sortable" ).sortable();
+     $( "#sortable" ).disableSelection();
+   });
+  </script>

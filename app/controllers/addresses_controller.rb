@@ -14,7 +14,7 @@ class AddressesController < ApplicationController
     @address = Address.new(address_params)
 
     # @address = process_address(@address)
-        @address.user = current_user
+    @address.user = current_user
     if @address.save
         redirect_to users_path
     else
