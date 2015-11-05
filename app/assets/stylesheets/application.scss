@@ -1,5 +1,26 @@
 body{
   font-weight: bold;
+
+}
+
+.jumbotron{
+  background-image: url("http://galaxynotewallpaper.org/media/images/1/3/21168.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 375px;
+  overflow: hidden;
+}
+.container.page{
+
+}
+
+.scroll-box{
+  overflow: scroll;
+  height: 500px;
+}
+
+#nav-links{
+  color: white;
 }
 
 nav.navbar.navbar-default{
@@ -15,9 +36,11 @@ nav.navbar.navbar-default{
 }
 
 .jumbo-text {
-  margin: 60px;
-  color: rgba(0,0,0,.8);
+  margin: 72px;
+  color: rgba(255,255,255,.8);
   font-weight: bolder;
+  font-size: 23px;
+  text-align: left;
 }
 
 @media (max-width: 767px) {
@@ -35,13 +58,14 @@ nav.navbar.navbar-default{
     margin: 60px;
     color: rgba(255,255,255,1);
     font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
   }
   #seen{
-    color: rgba(0,0,0,.9);
+    color: rgba(255,255,255,.9);
   }
 
   .nav li{
-    background-color: rgba(0,0,0,.7);
     border: rgba(0,0,0,0.1);
     border-radius: 7px;
     padding: 0px;
@@ -49,6 +73,9 @@ nav.navbar.navbar-default{
     color: black;
     font-size: 15px;
 
+  }
+  .nav-justified > li, .nav-tabs.nav-justified > li {
+    background-color: rgba(0,0,0,.7);
   }
 }
 
@@ -83,13 +110,6 @@ nav.navbar.navbar-default{
 
 
 
-.jumbotron{
-  background-image: url("http://www.traemcneely.com/wp-content/uploads/2011/08/wpid-000027861.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 450px;
-  overflow: hidden;
-}
 
 @import "bootstrap-sprockets";
 @import "bootstrap";

@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-AddressName.create(degree:0, minute:0, name_part:'origin')
+AddressName.create(degree:0, minute:0, name_part:'mod')
 AddressName.create(degree:1, minute:1, name_part:'aba')
 AddressName.create(degree:2, minute:2, name_part:'aca')
 AddressName.create(degree:3, minute:3, name_part:'ada')

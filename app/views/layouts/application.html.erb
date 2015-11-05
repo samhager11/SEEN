@@ -6,9 +6,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
-  <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
+  <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css"> -->
 
   <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/js/lightbox.js' type="text/javascript">
   <link href='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/css/lightbox.css'>  -->
@@ -31,7 +31,7 @@
           <div class='navLogin'>
           <ul class="nav nav-pills nav-justified">
             <% if current_user %>
-            <li role="presentation"><%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure?'} %></li>
+            <li role="presentation"><span id='nav-links'><%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure?'} %></li></span>
             <% else %>
             <li role="presentation"><%= link_to 'Login', login_path %></li>
             <li role="presentation"><%= link_to 'Sign Up', new_user_path %></li>
@@ -62,9 +62,9 @@
     </nav>
     <div class="jumbo-text"
         <% if current_user%>
-        <h2>You are known, welcome <%= User.find(current_user).name %></h2><br>
+        <h1>You are known, welcome <%= User.find(current_user).name %></h1><br>
         <% else %>
-        <h2> Welcome - Sign up or Log in to be SEEN </h2><br>
+        <h1> Welcome - Sign up or Log in to be SEEN </h1><br>
         <% end %>
         <% flash.each do |name, message| %>
       <div class="flash-message flash-message-<%= name %>">
@@ -76,7 +76,7 @@
 </div>
 
 
-    <div class='container'>
+    <div class='container page'>
 
     <%= yield %>
 

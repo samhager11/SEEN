@@ -1,6 +1,7 @@
 
 <h4>Connect with your SEEN neighbors</h4>
 <br>
+  <div scroll-box>
   <table class="table table-hover table-responsive">
     <tbody id="sortable">
       <tr>
@@ -10,16 +11,19 @@
         <th>City</th>
       </tr>
       <% @users.each do |u| %>
+        <% if @user.address.city == u.address.city %>
       <tr class="ui-state-default">
         <td><%=u.name%></td>
         <td><%=u.phone_number%></td>
         <td><%=u.address.address.upcase%></td>
         <td><%=u.address.city%></td>
       </tr>
+        <%end%>
       <% end %>
     </tbody>
-</table>
-
+  </table>
+  </div>
+  
   <script type="text/javascript">
   $(function() {
      $( "#sortable" ).sortable();
