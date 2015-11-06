@@ -52,20 +52,36 @@
 
 
 
+   var myIcon = L.icon({
+     iconUrl: '/assets/green-marker.png',
+     iconRetinaUrl: '/assets/green-marker.png',
+     iconSize: [95, 95],
+     iconAnchor: [22, 94],
+     popupAnchor: [30, -100],
+     shadowUrl: '/assets/marker-shadow.png',
+     shadowRetinaUrl: '/assets/marker-shadow.png',
+     shadowSize: [68, 95],
+     shadowAnchor: [22, 94]
+ });
+
+     L.marker([<%=@user.address.latitude%>, <%=@user.address.longitude%>], {icon: myIcon}).addTo(map).bindPopup("<b>This is you!<b>").openPopup();
+
+
      var myIcon = L.icon({
-       iconUrl: '/assets/marker-icon.png',
-       iconRetinaUrl: '/assets/marker-icon-2x.png',
-       iconSize: [38, 95],
+       iconUrl: '/assets/home-marker.png',
+       iconRetinaUrl: '/assets/home-marker.png',
+       iconSize: [95, 95],
        iconAnchor: [22, 94],
-       popupAnchor: [-3, -76],
+       popupAnchor: [30, -100],
        shadowUrl: '/assets/marker-shadow.png',
        shadowRetinaUrl: '/assets/marker-shadow.png',
        shadowSize: [68, 95],
        shadowAnchor: [22, 94]
    });
 
-     L.marker([<%=@user.address.latitude%>, <%=@user.address.longitude%>], {icon: myIcon}).addTo(map).bindPopup("<b>This is you!<b>").openPopup();
-
+   L.marker([<%=@user2.address.latitude%>, <%=@user2.address.longitude%>], {icon: myIcon}).addTo(map).bindPopup("<b>Your Neighbor<b>").openPopup();
+   L.marker([<%=@user3.address.latitude%>, <%=@user3.address.longitude%>], {icon: myIcon}).addTo(map).bindPopup("<b>Your Neighbor<b>").openPopup();
+   L.marker([<%=@user4.address.latitude%>, <%=@user4.address.longitude%>], {icon: myIcon}).addTo(map).bindPopup("<b>Your Neighbor<b>").openPopup();
 
      var popup = L.popup();
 

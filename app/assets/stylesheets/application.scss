@@ -1,17 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "users";
-@import "photos";
-@import "forums";
-@import "addresses";
-@import "address_names";
-@import "sessions";
-@import "static_pages"
-
-
-/*
- *= require jquery-ui
- */
 
 body{
   font-weight: bold;
@@ -27,7 +13,7 @@ img.table-image{
 }
 
 .container.page{
-  color: rgba(240,255,240,0.9)
+  color: rgba(255,255,255,0.9)
 }
 
 
@@ -162,3 +148,18 @@ nav.navbar.navbar-default{
   border: 5px solid rgba(0,0,0,.6);
   border-radius: 10px;
 }
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "users";
+@import "photos";
+@import "forums";
+@import "addresses";
+@import "address_names";
+@import "sessions";
+@import "static_pages"
+
+
+/*
+ *= require jquery-ui
+ */
