@@ -1,13 +1,24 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "users";
+@import "photos";
+@import "forums";
+@import "addresses";
+@import "address_names";
+@import "sessions";
+@import "static_pages"
+
+
+/*
+ *= require jquery-ui
+ */
+
 body{
   font-weight: bold;
   background: url('http://www.unsigneddesign.com/Grey_Grunge_6_13/Grey_Grunge1.jpg');
 
 }
-// form input
 
-
-
-// user table
 
 img.table-image{
   height: 70px;
@@ -151,21 +162,3 @@ nav.navbar.navbar-default{
   border: 5px solid rgba(0,0,0,.6);
   border-radius: 10px;
 }
-
-
-
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "users";
-@import "photos";
-@import "forums";
-@import "addresses";
-@import "address_names";
-@import "sessions";
-@import "static_pages"
-
-
-
-/*
- *= require jquery-ui
- */
