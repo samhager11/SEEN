@@ -26,7 +26,9 @@
         <td><%=u.phone_number%></td>
         <td><%=u.address.address.upcase%></td>
         <td><%=u.address.city%></td>
-        <!-- <td><%=image_tag u.photos.last.image%></td> -->
+        <% if u.photos.last %>
+        <td><%=image_tag u.photos.last.image%></td>
+        <% end %>
       </tr>
         <%end%>
       <% end %>
