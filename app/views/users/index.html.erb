@@ -44,9 +44,9 @@
      $( "#sortable" ).disableSelection();
    });
 
-
-  var userLat = document.getElementById('userlat');
-  var userLong = document.getElementById('userlong');
+  //
+  // var userLat = document.getElementById('userlat');
+  // var userLong = document.getElementById('userlong');
 
   function initMap(){
          //this should check if your leaflet is available or wait if not.
@@ -77,7 +77,7 @@
   var map = L.map('map', {
       layers: [waterMap] // only add one!
     })
-    .setView([userLat, userLong], 14);
+    .setView([-1.316919, 36.794652], 14);
 
   var baseLayers = {
   "OSM Mapnik": osmMap,
@@ -87,25 +87,25 @@
 
   L.control.layers(baseLayers).addTo(map);
 
-    var points = [
-    ["7C6B07",-40.99497,174.50808],
-    ["7C6B38",-41.30269,173.63696],
-    ["7C6CA1",-41.49413,173.5421],
-    ["7C6CA2",-40.98585,174.50659],
-    ["C81D9D",-40.93163,173.81726],
-    ["C82009",-41.5183,174.78081],
-    ["C82081",-41.42079,173.5783],
-    ["C820AB",-42.08414,173.96632],
-    ["C820B6",-41.51285,173.53274]
-    ];
+    // var points = [
+    // ["7C6B07",-40.99497,174.50808],
+    // ["7C6B38",-41.30269,173.63696],
+    // ["7C6CA1",-41.49413,173.5421],
+    // ["7C6CA2",-40.98585,174.50659],
+    // ["C81D9D",-40.93163,173.81726],
+    // ["C82009",-41.5183,174.78081],
+    // ["C82081",-41.42079,173.5783],
+    // ["C820AB",-42.08414,173.96632],
+    // ["C820B6",-41.51285,173.53274]
+    // ];
+    //
+    // for (var i = 0; i < points.length; i++) {
+    //   marker = new L.marker([points[i][1],points[i][2]])
+    //     .bindPopup(points[i][0])
+    //     .addTo(map);
+    // }
 
-    for (var i = 0; i < points.length; i++) {
-      marker = new L.marker([points[i][1],points[i][2]])
-        .bindPopup(points[i][0])
-        .addTo(map);
-    }
-
-    var marker = L.marker([-41.29042, 174.78219])
+    var marker = L.marker([-1.316919, 36.794652])
       .addTo(map)
       .bindPopup("<b>Te Papa</b><br>Museum of New Zealand.")
       .openPopup();

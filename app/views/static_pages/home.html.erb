@@ -1,5 +1,5 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+
+<h4>This is your address: <%=@user_address%>. Welcome home.</h4>
 <div class='scroll-box'>
    <div id="map">
 
@@ -13,9 +13,9 @@
     $( "#sortable" ).disableSelection();
   });
 
-
- var userLat = document.getElementById('userlat');
- var userLong = document.getElementById('userlong');
+ //
+ // var userLat = document.getElementById('userlat');
+ // var userLong = document.getElementById('userlong');
 
  function initMap(){
         //this should check if your leaflet is available or wait if not.
@@ -76,7 +76,7 @@
 
    var marker = L.marker([-1.316919, 36.794652])
      .addTo(map)
-     .bindPopup("<b>Te Papa</b><br>Museum of New Zealand.")
+     .bindPopup("<b>.")
      .openPopup();
 
 
