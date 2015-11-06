@@ -8,21 +8,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
-    @user2 = User.find(session[:user_id]+1)
-    @user3 = User.find(session[:user_id]+2)
-    @user4 = User.find(session[:user_id]+3)
+
 
 
     @users = User.all
     @user_lat = @user.address.latitude
     @user_long = @user.address.longitude
 
-    @user_lat2 = @user2.address.latitude
-    @user_long2 = @user2.address.longitude
-    @user_lat3 = @user3.address.latitude
-    @user_long3 = @user3.address.longitude
-    @user_lat4 = @user4.address.latitude
-    @user_long4 = @user4.address.longitude
 
   end
 
