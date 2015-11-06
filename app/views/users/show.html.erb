@@ -1,4 +1,8 @@
 
+  <h4>This is your address: </h4>
+  <h3><%= @user.address.address %></h3><br>
+  <h4>Welcome home.</h4>
+
   <div class='scroll-box'>
      <div id="map">
 
@@ -7,17 +11,8 @@
 
 <script type="text/javascript">
 
-   $(function() {
-      $( "#sortable" ).sortable();
-      $( "#sortable" ).disableSelection();
-    });
-
-   //
-   // var userLat = document.getElementById('userlat');
-   // var userLong = document.getElementById('userlong');
 
    function initMap(){
-          //this should check if your leaflet is available or wait if not.
           if(typeof L=== "undefined"){
                  window.setTimeout(initMap, 100);
                  return;

@@ -13,6 +13,7 @@
   <table class="table table-hover table-responsive">
     <tbody id="sortable">
       <tr>
+        <th>Home</th>
         <th>Name</th>
         <th>Phone</th>
         <th>SEEN Address</th>
@@ -22,13 +23,11 @@
       <% @users.each do |u| %>
         <% if @user.address.city == u.address.city %>
       <tr class="ui-state-default">
+        <td><span class="glyphicon glyphicon-home"></span></td>
         <td><%=u.name%></td>
         <td><%=u.phone_number%></td>
         <td><%=u.address.address.upcase%></td>
         <td><%=u.address.city%></td>
-        <% if u.photos.last %>
-        <td><%=image_tag u.photos.last.image, class:"table-image"%></td>
-        <% end %>
       </tr>
         <%end%>
       <% end %>
