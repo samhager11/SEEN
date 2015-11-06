@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151104213112) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "address_names", force: :cascade do |t|
     t.integer  "degree"
     t.integer  "minute"
@@ -35,13 +38,12 @@ ActiveRecord::Schema.define(version: 20151104213112) do
     t.decimal  "longitude_sec"
     t.string   "longitude_name_part"
     t.string   "address"
+    t.integer  "user_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.integer  "user_id"
-    t.string   "phone_number"
   end
 
-  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id"
+  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id", using: :btree
 
   create_table "forums", force: :cascade do |t|
     t.string   "post"
@@ -61,20 +63,25 @@ ActiveRecord::Schema.define(version: 20151104213112) do
     t.string   "city"
   end
 
-  add_index "photos", ["address_id"], name: "index_photos_on_address_id"
-  add_index "photos", ["user_id"], name: "index_photos_on_user_id"
+  add_index "photos", ["address_id"], name: "index_photos_on_address_id", using: :btree
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "phone_number",    limit: 10
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "phone_number"
+    t.string   "address"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "user_name"
     t.string   "password_digest"
     t.integer  "address_id"
   end
 
-  add_index "users", ["address_id"], name: "index_users_on_address_id"
+  add_index "users", ["address_id"], name: "index_users_on_address_id", using: :btree
 
+  add_foreign_key "addresses", "users"
+  add_foreign_key "photos", "addresses"
+  add_foreign_key "photos", "users"
+  add_foreign_key "users", "addresses"
 end
