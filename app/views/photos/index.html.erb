@@ -17,7 +17,7 @@
         <% @photos.each do |p| %>
 
       <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-        <img src='<%=p.image%>'>
+        <%=image_tag p.image%>
         <div class="caption">
           <h6><%=p.description %></h6><h7>Added By: <%=p.user.name %></h7>
         </div>
