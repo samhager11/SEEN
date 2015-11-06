@@ -27,7 +27,7 @@
         <td><%=u.address.address.upcase%></td>
         <td><%=u.address.city%></td>
         <% if u.photos.last %>
-        <td id="table-image"><%=image_tag u.photos.last.image%></td>
+        <td><%=image_tag u.photos.last.image, class:"table-image"%></td>
         <% end %>
       </tr>
         <%end%>

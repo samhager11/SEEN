@@ -3,15 +3,24 @@ body{
   background: url('http://www.unsigneddesign.com/Grey_Grunge_6_13/Grey_Grunge1.jpg');
 
 }
+// form input
+
+
+
+// user table
+
+.table-image {
+  height: 70px;
+  width: 100px;
+
+}
+
+.container.page{
+  color: rgba(240,255,240,0.9)
+}
 
 input{
   color: black;
-}
-
-#table-image{
-  height: 20px;
-  width: 30px;
-
 }
 
 .leaflet-popup-content{
@@ -39,9 +48,6 @@ input#photo_city{
   height: 375px;
   overflow: hidden;
   border-bottom: 5px solid rgba(0,0,0,.6);
-}
-.container.page{
-  color: rgba(240,255,240,0.9)
 }
 
 .scroll-box{
