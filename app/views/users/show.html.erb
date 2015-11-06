@@ -6,7 +6,7 @@
    </div>
 
 <script type="text/javascript">
-  
+
    $(function() {
       $( "#sortable" ).sortable();
       $( "#sortable" ).disableSelection();
@@ -73,10 +73,19 @@
      //     .addTo(map);
      // }
 
-     var marker = L.marker([<%=@user.address.latitude%>, <%=@user.address.longitude%>])
-       .addTo(map)
-       .bindPopup("<b>This is you!</b>")
-       .openPopup();
+     var myIcon = L.icon({
+       iconUrl: '/assets/marker-icon.png',
+       iconRetinaUrl: '/assets/marker-icon-2x.png',
+       iconSize: [38, 95],
+       iconAnchor: [22, 94],
+       popupAnchor: [-3, -76],
+       shadowUrl: '/assets/marker-shadow.png',
+       shadowRetinaUrl: '/assets/marker-shadow.png',
+       shadowSize: [68, 95],
+       shadowAnchor: [22, 94]
+   });
+
+     L.marker([<%=@user.address.latitude%>, <%=@user.address.longitude%>], {icon: myIcon}).addTo(map).bindPopup("<b>This is you!<b>").openPopup();
 
 
      var popup = L.popup();

@@ -46,7 +46,9 @@
  var map = L.map('map', {
      layers: [waterMap] // only add one!
    })
-   .setView([-1.316919, 36.794652], 14);
+   .setView([34.013111, -118.495232], 14);
+
+
 
  var baseLayers = {
  "OSM Mapnik": osmMap,
@@ -74,10 +76,20 @@
   //      .addTo(map);
   //  }
 
-   var marker = L.marker([-1.316919, 36.794652])
-     .addTo(map)
-     .bindPopup("<b>.")
-     .openPopup();
+  var myIcon = L.icon({
+    iconUrl: '/assets/marker-icon.png',
+    iconRetinaUrl: '/assets/marker-icon-2x.png',
+    iconSize: [38, 95],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    shadowUrl: '/assets/marker-shadow.png',
+    shadowRetinaUrl: '/assets/marker-shadow.png',
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94]
+});
+
+  L.marker([34.013111, -118.495232], {icon: myIcon}).addTo(map).bindPopup("<b>This could be you!<b>").openPopup();
+
 
 
    var popup = L.popup();
