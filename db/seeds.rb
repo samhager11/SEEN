@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+if User.destroy_all
 AddressName.create(degree:0, minute:0, name_part:'mod')
 AddressName.create(degree:1, minute:1, name_part:'aba')
 AddressName.create(degree:2, minute:2, name_part:'aca')
@@ -367,3 +368,4 @@ AddressName.create(degree:357, name_part:'wun')
 AddressName.create(degree:358, name_part:'vun')
 AddressName.create(degree:359, name_part:'yun')
 AddressName.create(degree:360, name_part:'zun')
+end

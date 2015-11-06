@@ -9,6 +9,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(session[:user_id])
     @users = User.all
+    @user_lat = @user.address.latitude
+    @user_long = @user.address.longitude
   end
 
   def new

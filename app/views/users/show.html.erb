@@ -7,14 +7,48 @@
 
 
 <script type="text/javascript">
-  map = L.map('map').setView([-41.2858, 174.78682], 14);
-      mapLink =
-          '<a href="http://openstreetmap.org">OpenStreetMap</a>';
-      L.tileLayer(
-          'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: 'Map data &copy; ' + mapLink,
-          maxZoom: 18,
-          }).addTo(map);
+
+var userLat = <%= @user_lat %>;
+var userLong = <%= @user_long %>;
+
+function initMap(){
+         //this should check if your leaflet is available or wait if not.
+         if(typeof L=== "undefined"){
+                window.setTimeout(initMap, 100);
+                return;
+         }
+         var map = L.map('map');
+};
+
+
+
+var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
+    thunLink = '<a href="http://thunderforest.com/">Thunderforest</a>';
+    waterLink = '<a href="http://stamen.com">Stamen Design</a>';
+
+var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    osmAttrib = '&copy; ' + osmLink + ' Contributors',
+    landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
+    thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink,
+    waterUrl= 'http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg',
+    waterAttrib ='&copy; '+osmLink+' Contributors & '+waterLink;
+
+var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
+    landMap = L.tileLayer(landUrl, {attribution: thunAttrib});
+    waterMap = L.tileLayer(waterUrl, {attribution: waterAttrib});
+
+var map = L.map('map', {
+	    layers: [waterMap] // only add one!
+    })
+    .setView([userLat, userLong], 14);
+
+var baseLayers = {
+	"OSM Mapnik": osmMap,
+	"Landscape": landMap,
+  "Watercolor": waterMap
+};
+
+L.control.layers(baseLayers).addTo(map);
 
     var points = [
   	["7C6B07",-40.99497,174.50808],
@@ -39,7 +73,9 @@
       .bindPopup("<b>Te Papa</b><br>Museum of New Zealand.")
       .openPopup();
 
+
     var popup = L.popup();
+
 
     function onMapClick(e) {
         popup
