@@ -26,7 +26,7 @@
         <td><%=u.phone_number%></td>
         <td><%=u.address.address.upcase%></td>
         <td><%=u.address.city%></td>
-        <td><%=image_tag u.photo.last.image%></td>
+        <td><%=image_tag u.photos.last.image%></td>
       </tr>
         <%end%>
       <% end %>
@@ -77,7 +77,7 @@
   var map = L.map('map', {
       layers: [waterMap] // only add one!
     })
-    .setView([-1.316919, 36.794652], 14);
+    .setView([<%=@user.address.latitude%>, <%=@user.address.longitude%>], 14);
 
   var baseLayers = {
   "OSM Mapnik": osmMap,
@@ -105,9 +105,9 @@
     //     .addTo(map);
     // }
 
-    var marker = L.marker([-1.316919, 36.794652])
+    var marker = L.marker([<%=@user.address.latitude%>, <%=@user.address.longitude%>])
       .addTo(map)
-      .bindPopup("<b>Te Papa</b><br>Museum of New Zealand.")
+      .bindPopup("<b>This is you!</b>")
       .openPopup();
 
 
