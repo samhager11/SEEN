@@ -1,8 +1,15 @@
 body{
   font-weight: bold;
-  color: white;
   background: url('http://www.unsigneddesign.com/Grey_Grunge_6_13/Grey_Grunge1.jpg');
 
+}
+
+input{
+  color: black;
+}
+
+input#photo_description{
+  color: black;
 }
 
 .jumbotron{
