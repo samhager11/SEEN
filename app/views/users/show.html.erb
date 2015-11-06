@@ -5,84 +5,89 @@
      </div>
    </div>
 
-
 <script type="text/javascript">
+  
+   $(function() {
+      $( "#sortable" ).sortable();
+      $( "#sortable" ).disableSelection();
+    });
 
-var userLat = <%= @user_lat %>;
-var userLong = <%= @user_long %>;
+   //
+   // var userLat = document.getElementById('userlat');
+   // var userLong = document.getElementById('userlong');
 
-function initMap(){
-         //this should check if your leaflet is available or wait if not.
-         if(typeof L=== "undefined"){
-                window.setTimeout(initMap, 100);
-                return;
-         }
-         var map = L.map('map');
-};
-
-
-
-var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
-    thunLink = '<a href="http://thunderforest.com/">Thunderforest</a>';
-    waterLink = '<a href="http://stamen.com">Stamen Design</a>';
-
-var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-    osmAttrib = '&copy; ' + osmLink + ' Contributors',
-    landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
-    thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink,
-    waterUrl= 'http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg',
-    waterAttrib ='&copy; '+osmLink+' Contributors & '+waterLink;
-
-var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
-    landMap = L.tileLayer(landUrl, {attribution: thunAttrib});
-    waterMap = L.tileLayer(waterUrl, {attribution: waterAttrib});
-
-var map = L.map('map', {
-	    layers: [waterMap] // only add one!
-    })
-    .setView([userLat, userLong], 14);
-
-var baseLayers = {
-	"OSM Mapnik": osmMap,
-	"Landscape": landMap,
-  "Watercolor": waterMap
-};
-
-L.control.layers(baseLayers).addTo(map);
-
-    var points = [
-  	["7C6B07",-40.99497,174.50808],
-  	["7C6B38",-41.30269,173.63696],
-  	["7C6CA1",-41.49413,173.5421],
-  	["7C6CA2",-40.98585,174.50659],
-  	["C81D9D",-40.93163,173.81726],
-  	["C82009",-41.5183,174.78081],
-  	["C82081",-41.42079,173.5783],
-  	["C820AB",-42.08414,173.96632],
-  	["C820B6",-41.51285,173.53274]
-  	];
-
-		for (var i = 0; i < points.length; i++) {
-			marker = new L.marker([points[i][1],points[i][2]])
-				.bindPopup(points[i][0])
-				.addTo(map);
-		}
-
-    var marker = L.marker([-41.29042, 174.78219])
-      .addTo(map)
-      .bindPopup("<b>Te Papa</b><br>Museum of New Zealand.")
-      .openPopup();
+   function initMap(){
+          //this should check if your leaflet is available or wait if not.
+          if(typeof L=== "undefined"){
+                 window.setTimeout(initMap, 100);
+                 return;
+          }
+          var map = L.map('map');
+   };
 
 
-    var popup = L.popup();
+
+   var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
+     thunLink = '<a href="http://thunderforest.com/">Thunderforest</a>';
+     waterLink = '<a href="http://stamen.com">Stamen Design</a>';
+
+   var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+     osmAttrib = '&copy; ' + osmLink + ' Contributors',
+     landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
+     thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink,
+     waterUrl= 'http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg',
+     waterAttrib ='&copy; '+osmLink+' Contributors & '+waterLink;
+
+   var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
+     landMap = L.tileLayer(landUrl, {attribution: thunAttrib});
+     waterMap = L.tileLayer(waterUrl, {attribution: waterAttrib});
+
+   var map = L.map('map', {
+       layers: [waterMap] // only add one!
+     })
+     .setView([<%=@user.address.latitude%>, <%=@user.address.longitude%>], 14);
+
+   var baseLayers = {
+   "OSM Mapnik": osmMap,
+   "Landscape": landMap,
+   "Watercolor": waterMap
+   };
+
+   L.control.layers(baseLayers).addTo(map);
+
+     // var points = [
+     // ["7C6B07",-40.99497,174.50808],
+     // ["7C6B38",-41.30269,173.63696],
+     // ["7C6CA1",-41.49413,173.5421],
+     // ["7C6CA2",-40.98585,174.50659],
+     // ["C81D9D",-40.93163,173.81726],
+     // ["C82009",-41.5183,174.78081],
+     // ["C82081",-41.42079,173.5783],
+     // ["C820AB",-42.08414,173.96632],
+     // ["C820B6",-41.51285,173.53274]
+     // ];
+     //
+     // for (var i = 0; i < points.length; i++) {
+     //   marker = new L.marker([points[i][1],points[i][2]])
+     //     .bindPopup(points[i][0])
+     //     .addTo(map);
+     // }
+
+     var marker = L.marker([<%=@user.address.latitude%>, <%=@user.address.longitude%>])
+       .addTo(map)
+       .bindPopup("<b>This is you!</b>")
+       .openPopup();
 
 
-    function onMapClick(e) {
-        popup
-            .setLatLng(e.latlng)
-            .setContent("You clicked the map at " + e.latlng.toString())
-            .openOn(map);
-    }
+     var popup = L.popup();
 
-    map.on('click', onMapClick);
-</script>
+
+     function onMapClick(e) {
+         popup
+             .setLatLng(e.latlng)
+             .setContent("You clicked the map at " + e.latlng.toString())
+             .openOn(map);
+     }
+
+     map.on('click', onMapClick);
+   </script>
