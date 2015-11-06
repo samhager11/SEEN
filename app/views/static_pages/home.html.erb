@@ -73,6 +73,21 @@
 
 
    var popup = L.popup();
+   var myIcon = L.icon({
+     iconUrl: '/assets/home-marker.png',
+     iconRetinaUrl: '/assets/home-marker.png',
+     iconSize: [95, 95],
+     iconAnchor: [22, 94],
+     popupAnchor: [30, -100],
+     shadowUrl: '/assets/marker-shadow.png',
+     shadowRetinaUrl: '/assets/marker-shadow.png',
+     shadowSize: [68, 95],
+     shadowAnchor: [22, 94]
+ });
+
+ L.marker([34.013031, -118.495331], {icon: myIcon}).addTo(map).bindPopup("<b>Your Neighbor<b>").openPopup();
+ L.marker([34.012506, -118.494213], {icon: myIcon}).addTo(map).bindPopup("<b>Your Neighbor<b>").openPopup();
+
 
 
    function onMapClick(e) {

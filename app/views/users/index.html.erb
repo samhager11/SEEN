@@ -104,21 +104,7 @@
     var popup = L.popup();
 
 
-       var myIcon = L.icon({
-         iconUrl: '/assets/home-marker.png',
-         iconRetinaUrl: '/assets/home-marker.png',
-         iconSize: [95, 95],
-         iconAnchor: [22, 94],
-         popupAnchor: [30, -100],
-         shadowUrl: '/assets/marker-shadow.png',
-         shadowRetinaUrl: '/assets/marker-shadow.png',
-         shadowSize: [68, 95],
-         shadowAnchor: [22, 94]
-     });
 
-     L.marker([<%=@user2.address.latitude%>, <%=@user2.address.longitude%>], {icon: myIcon}).addTo(map).bindPopup("<b>Your Neighbor<b>").openPopup();
-     L.marker([<%=@user3.address.latitude%>, <%=@user3.address.longitude%>], {icon: myIcon}).addTo(map).bindPopup("<b>Your Neighbor<b>").openPopup();
-     L.marker([<%=@user4.address.latitude%>, <%=@user4.address.longitude%>], {icon: myIcon}).addTo(map).bindPopup("<b>Your Neighbor<b>").openPopup();
 
     function onMapClick(e) {
         popup
