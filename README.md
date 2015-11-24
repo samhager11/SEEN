@@ -24,21 +24,21 @@ This app was built using:
 
 ERD Diagram for Data Relationship Modeling:
 
-[![ERD Diagram](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/ERD_Project2.png)](#RelationshipDiagram)
+![ERD Diagram](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/ERD_Project2.png "RelationshipDiagram")
 
 First Iteration Wireframes:
 
 Site Overview:
-[![Wireframe 1](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1508_1024.jpg)](SiteOverview)
+![Site Overview](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1508_1024.jpg "SiteOverview")
 
 Signup and Login with Landing Page:
-[![Wireframe 2](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1515_1024.jpg)](Login&Signup)
+![Login and Signup](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1515_1024.jpg "Login&Signup")
 
 Community Home Page:
-[![Wireframe 3](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1518_1024.jpg)](CommunityHome)
+![Community Home](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1518_1024.jpg "CommunityHome")
 
 Photo Upload and Show:
-[![Wireframe 4](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1519_1024.jpg)](PhotoUpload)
+![Photo Upload](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1519_1024.jpg "PhotoUpload")
 
 USER STORIES
 
