@@ -1,6 +1,6 @@
 == README for SEEN
 
-SEEN
+# **SEEN**
 
 An application built to solve the problem of addressing the unaddressed, and seeing the unseen. 
 
@@ -10,7 +10,7 @@ SEEN is a universal addressing application that allows users to sign up and add 
 
 Because a majority of people in these depressed areas have smart phones or similar technology, adding their location's coordinates is as simple as dropping a pin and grabbing the coordinates to be entered to the application. Mobile technology will continue to become more and more prevalent in these areas, opening up new opportunities for organizations and governments alike to be able to provide aid, infrastucture, and identity to the billions of people who call the areas home.
 
-TECHNOLOGIES
+## **TECHNOLOGIES**
 
 This app was built using:
 
@@ -22,25 +22,25 @@ This app was built using:
 - Bootstrap CSS
 - CarrierWave Bundle for Picture Uploading
 
-ERD Diagram for Data Relationship Modeling:
+*ERD Diagram for Data Relationship Modeling:*
 
-![ERD Diagram](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/ERD_Project2.png "RelationshipDiagram")
+![ERD Diagram](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/ERD_Project2.png)
 
-First Iteration Wireframes:
+*First Iteration Wireframes:*
 
 Site Overview:
-![Site Overview](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1508_1024.jpg "SiteOverview")
+![Site Overview](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1508_1024.jpg)
 
 Signup and Login with Landing Page:
-![Login and Signup](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1515_1024.jpg "Login&Signup")
+![Login and Signup](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1515_1024.jpg)
 
 Community Home Page:
-![Community Home](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1518_1024.jpg "CommunityHome")
+![Community Home](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1518_1024.jpg)
 
 Photo Upload and Show:
-![Photo Upload](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1519_1024.jpg "PhotoUpload")
+![Photo Upload](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1519_1024.jpg)
 
-USER STORIES
+# **USER STORIES**
 
 As a user, I want to easily enter my coordinates so I can claim my address for my home and start living.
 
@@ -50,7 +50,7 @@ As a user, I want to be able to create, read, update, and destroy my photos.
 
 As a user, I want to be able to see where my neighbors live based on those using the SEEN application. I also want to know how I can contact them easily so we can continue building the community.
 
-BACKLOG:
+# **BACKLOG:**
 
 - The overarching idea behind SEEN is to help these unique communities thrive. 
 - A community forum to be implemented for easy acitivity and information sharing.
