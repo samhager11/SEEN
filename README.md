@@ -24,7 +24,7 @@ This app was built using:
 
 *ERD Diagram for Data Relationship Modeling:*
 
-![ERD Diagram](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/ERD_Project2.png)
+![ERD Diagram](/wireframes_and_erd/ERD_Project2.png)
 
 *First Iteration Wireframes:*
 
