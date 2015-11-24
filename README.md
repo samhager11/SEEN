@@ -40,7 +40,7 @@ Community Home Page:
 Photo Upload and Show:
 ![Photo Upload](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1519_1024.jpg)
 
-# **USER STORIES**
+## **USER STORIES**
 
 As a user, I want to easily enter my coordinates so I can claim my address for my home and start living.
 
@@ -50,7 +50,7 @@ As a user, I want to be able to create, read, update, and destroy my photos.
 
 As a user, I want to be able to see where my neighbors live based on those using the SEEN application. I also want to know how I can contact them easily so we can continue building the community.
 
-# **BACKLOG:**
+## **BACKLOG:**
 
 - The overarching idea behind SEEN is to help these unique communities thrive. 
 - A community forum to be implemented for easy acitivity and information sharing.
