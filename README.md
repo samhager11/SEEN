@@ -29,16 +29,16 @@ This app was built using:
 *First Iteration Wireframes:*
 
 Site Overview:
-![Site Overview](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1508_1024.jpg)
+![Site Overview](/wireframes_and_erd/thumb_IMG_1508_1024.jpg)
 
 Signup and Login with Landing Page:
-![Login and Signup](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1515_1024.jpg)
+![Login and Signup](/wireframes_and_erd/thumb_IMG_1515_1024.jpg)
 
 Community Home Page:
-![Community Home](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1518_1024.jpg)
+![Community Home](/wireframes_and_erd/thumb_IMG_1518_1024.jpg)
 
 Photo Upload and Show:
-![Photo Upload](https://github.com/samhager11/SEEN/tree/master/wireframes_and_erd/thumb_IMG_1519_1024.jpg)
+![Photo Upload](/wireframes_and_erd/thumb_IMG_1519_1024.jpg)
 
 ## **USER STORIES**
 
