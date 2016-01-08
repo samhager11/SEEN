@@ -24,21 +24,16 @@ This app was built using:
 
 *ERD Diagram for Data Relationship Modeling:*
 
-![ERD Diagram](/wireframes_and_erd/ERD_Project2.png)
+![ERD Diagram](/readme_photos/ERD_Project2.png)
 
 *First Iteration Wireframes:*
 
 Site Overview:
-![Site Overview](/wireframes_and_erd/thumb_IMG_1508_1024.jpg)
+![Site Overview](/readme_photos/thumb_IMG_1508_1024.jpg)
 
-Signup and Login with Landing Page:
-![Login and Signup](/wireframes_and_erd/thumb_IMG_1515_1024.jpg)
-
-Community Home Page:
-![Community Home](/wireframes_and_erd/thumb_IMG_1518_1024.jpg)
-
-Photo Upload and Show:
-![Photo Upload](/wireframes_and_erd/thumb_IMG_1519_1024.jpg)
+Screenshots:
+![Community Page](/readme_photos/communitypage.png)
+![Community Photos](/readme_photos/communityphotos.png)
 
 ## **USER STORIES**
 
